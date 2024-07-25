@@ -13,10 +13,10 @@ describe("A node", () => {
 		 next: node2
 	  };
    });
-   describe("Should store the given information", () => {
-	  test.todo("");
-	  test.todo("");
-	  test.todo("");
-	  test.todo("");
+   describe("Given information", () => {
+	  test.todo("Should have a correctly typed key.");
+	  test.todo("Should point next to a node.");
+	  test.todo("Should hold the value in its key.");
+	  test.todo("Should point to the next node.");
    });
 });
