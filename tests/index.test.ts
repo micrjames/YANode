@@ -37,25 +37,25 @@ describe("A node", () => {
 		};
 		node2 = {
 		   Key: 2,
-		   parent: node1
+		   _parent: node1
 		};
 		node3 = {
 		   Key: 3,
-		   parent: node1
+		   _parent: node1
 		};
-		node1.children = [node2, node3];
+		node1._children = [node2, node3];
 	  });
 	  test("Should have a correctly typed key.", () => {
 		  const node1KeyType = typeof node1.Key;
 		  expect(node1KeyType).toBe("number");
 	  });
 	  test("Should be a parent node.", () => {
-		  const node1Children = node1.children; 
-		  const isParent = node1Children.every(child => child.parent === node1);
+		  const node1Children = node1._children; 
+		  const isParent = node1Children.every(child => child._parent === node1);
 		  expect(isParent).toBeTruthy();
 	  });
 	  test("Should point to at least one child.", () => {
-		  const node1Children = node1.children; 
+		  const node1Children = node1._children; 
 		  const numOfNode1Children = node1Children.length;
 		  expect(numOfNode1Children).toBeGreaterThan(1);
 	  });
@@ -64,7 +64,7 @@ describe("A node", () => {
 		  expect(node1Key).toBe(1);
 	  });
 	  test("Should point to the children.", () => {
-		  const node1Children = node1.children; 
+		  const node1Children = node1._children; 
 		  expect(node1Children).toEqual([node2, node3]);
 	  });
    });
